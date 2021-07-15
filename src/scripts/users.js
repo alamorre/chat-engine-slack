@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const users = [
     {
         "username": "Adam La Morre",
@@ -52,6 +54,12 @@ export const users = [
 
 export function createUsers() {
     users.map(user => {
-        // Create user - need wifi
+        axios.put(
+            'http://127.0.0.1:8000/users/',
+            user,
+            {headers: {'Private-Key': '6021e811-dbcc-4b5e-b3a9-a0c3be73bc08'}}
+        )
+        .then(r => console.log('new user', r))
+        .catch(e => console.log('get/create user error', e))
     })
 }

@@ -79,7 +79,7 @@ const ChatList = props => {
     }
 
     return (
-        <div style={{ padding: '16px', borderRight: '1px solid rgb(175, 175, 175)', height: '100%' }}>
+        <div style={styles.chatList}>
             <div style={styles.titleContainer}>
                 <ChatGroup 
                     title='Channels' 
@@ -110,9 +110,11 @@ const ChatList = props => {
 export default ChatList;
 
 const styles = {
-    title: {
-        fontSize: '18px',
-        fontWeight: '600',
+    chatList: { 
+        padding: '16px',
+        borderRight: '1px solid rgb(175, 175, 175)', 
+        height: '100%', 
+        backgroundColor: '#722ed1' 
     },
     titleContainer: {
         padding: '0px 12px',

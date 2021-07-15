@@ -3,7 +3,9 @@ import { ChatEngine } from 'react-chat-engine'
 import ChatList from './ChatList'
 import Message from './Message'
 
-import { users } from './scripts/users'
+import { users, createUsers } from './scripts/users'
+
+createUsers()
 
 function App() {
   const user = users[0]

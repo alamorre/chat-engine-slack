@@ -3,20 +3,27 @@ import React, { useState } from 'react'
 const ChatLink = props => {
     const [hovered, setHovered] = useState(false)
 
+    var color = '#dfdfdf'
+    if (props.bold) color = 'white'
+    if (hovered) color = 'yellow'
+
     return (
-        <div 
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            style={{
-                ...styles.link,
-                ...{ 
-                    fontWeight: props.bold ? '900' : '500',
-                    color: hovered ? 'purple' : 'black',
-                }
-            }}
-            onClick={() => props.onClick()}
-        >
-            {props.title}
+        <div>
+            <div 
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                style={{
+                    ...styles.link,
+                    ...{ 
+                        color,
+                        fontWeight: props.bold ? '900' : '500',
+                        fontSize: props.bold ? '18px' : '17px',
+                    }
+                }}
+                onClick={() => props.onClick()}
+            >
+                {props.title}
+            </div>
         </div>
     )
 }
@@ -25,8 +32,9 @@ export default ChatLink;
 
 const styles = {
     link: {
-        fontSize: '17px',
         cursor: 'pointer',
-        padding: '3px 0px'
+        padding: '3px 0px',
+        display: 'inline-block',
+        color: 'white'
     },
 }

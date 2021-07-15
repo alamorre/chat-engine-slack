@@ -45,14 +45,17 @@ const styles = {
     title: {
         fontSize: '14px',
         fontWeight: '600',
+        color: 'white',
     },
     button: {
         float: 'right',
-        backgroundColor: 'white',
-        border: '0px solid white',
+        width: '33px',
+        backgroundColor: '#722ed1',
+        border: '1px solid white',
+        borderRadius: '50%',
         fontSize: '24px',
         cursor: 'pointer',
-        color: 'purple',
+        color: 'white',
         position: 'relative',
         bottom: '3px',
     }
