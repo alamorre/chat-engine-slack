@@ -113,7 +113,7 @@ const styles = {
     chatList: { 
         padding: '16px',
         borderRight: '1px solid rgb(175, 175, 175)', 
-        height: '100%', 
+        height: 'calc(100% - 32px)',
         backgroundColor: '#722ed1' 
     },
     titleContainer: {

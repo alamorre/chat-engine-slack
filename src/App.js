@@ -1,6 +1,7 @@
 import { ChatEngine } from 'react-chat-engine'
 
 import ChatList from './ChatList'
+import ChatHeader from './ChatHeader'
 import Message from './Message'
 
 import { users, createUsers } from './scripts/users'
@@ -20,7 +21,8 @@ function App() {
         userSecret={user.secret}
         offset={user.custom_json.gmt_offset}
         renderChatList={(stuff) => <ChatList {...stuff} />}
-        renderMessageBubble={(creds, chat, lastMessage, message, nextMessage) => <Message creds={creds} chat={chat} lastMessage={lastMessage} message={message} nextMessage={nextMessage} />}
+        renderChatHeader={() => <ChatHeader />}
+        renderMessageBubble={(creds, chat, lastMessage, message, nextMessage) => <Message creds={creds} chat={chat} lastMessage={lastMessage} message={message} nextMessage={nextMessage} offset={user.custom_json.gmt_offset} />}
         renderSendingMessages={(creds, chat, lastMessage, message, nextMessage) => <Message creds={creds} chat={chat} lastMessage={lastMessage} message={message} nextMessage={nextMessage} sending={true} />}
       />
     </div>
