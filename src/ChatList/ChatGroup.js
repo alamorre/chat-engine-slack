@@ -18,6 +18,7 @@ const ChatGroup = props => {
                     <input 
                         autoFocus 
                         value={value}
+                        placeholder={props.placeholder}
                         onChange={e => setValue(e.target.value)}
                         onBlur={() => setFormOpen(false)}
                     />
@@ -27,7 +28,7 @@ const ChatGroup = props => {
                         {props.title}
                     </span>
                     <button 
-                        style={{ float: 'right' }}
+                        style={styles.button}
                         onClick={() => setFormOpen(true)}
                     >
                         +
@@ -42,7 +43,17 @@ export default ChatGroup;
 
 const styles = {
     title: {
-        fontSize: '18px',
+        fontSize: '14px',
         fontWeight: '600',
     },
+    button: {
+        float: 'right',
+        backgroundColor: 'white',
+        border: '0px solid white',
+        fontSize: '24px',
+        cursor: 'pointer',
+        color: 'purple',
+        position: 'relative',
+        bottom: '3px',
+    }
 }

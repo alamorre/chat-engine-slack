@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ChatLink = props => {
+    const [hovered, setHovered] = useState(false)
+
     return (
         <div 
-            style={styles.link}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+                ...styles.link,
+                ...{ 
+                    fontWeight: props.bold ? '900' : '500',
+                    color: hovered ? 'purple' : 'black',
+                }
+            }}
             onClick={() => props.onClick()}
         >
             {props.title}
@@ -15,6 +25,8 @@ export default ChatLink;
 
 const styles = {
     link: {
+        fontSize: '17px',
         cursor: 'pointer',
+        padding: '3px 0px'
     },
 }

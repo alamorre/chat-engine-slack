@@ -8,6 +8,16 @@ import ChatGroup from './ChatGroup'
 const ChatList = props => {
     const { setActiveChat } = useContext(ChatEngineContext)
 
+    function hasReadLastMessage(chat) {
+        var lastReadMessageID = -1
+        chat.people.map(chat_person => {
+            if (chat_person.person.username === props.userName) {
+                lastReadMessageID = chat_person.last_read
+            }
+        })
+        return !chat.last_message.id || lastReadMessageID === chat.last_message.id
+    }
+
     function renderChannels() {
         const chatList = props.chats ? Object.values(props.chats) : []
         return chatList.map((chat, index) => {
@@ -15,7 +25,8 @@ const ChatList = props => {
                 return (
                     <ChatLink 
                         key={`chat-${index}`} 
-                        title={`#${chat.title}`}
+                        title={`# ${chat.title}`}
+                        bold={!hasReadLastMessage(chat)}
                         onClick={() => setActiveChat(chat.id)}
                     />
                 )
@@ -43,6 +54,7 @@ const ChatList = props => {
                     <ChatLink 
                         key={`chat-${index}`} 
                         title={`${returnNotMe(chat)}`}
+                        bold={!hasReadLastMessage(chat)}
                         onClick={() => setActiveChat(chat.id)}
                     />
                 )
@@ -54,7 +66,7 @@ const ChatList = props => {
 
     function onChannelCreate(data) {
         const chat = { title: data.value }
-        getOrCreateChat(props, chat, (r) => console.log(r))
+        getOrCreateChat(props, chat, r => console.log('New Channel', r))
     }
 
 
@@ -63,24 +75,30 @@ const ChatList = props => {
             is_direct_chat: true,
             usernames: [data.value, props.userName]
         }
-        getOrCreateChat(props, chat, (r) => console.log(r))
+        getOrCreateChat(props, chat, r => console.log('New DM', r))
     }
 
     return (
-        <div style={{ padding: '12px', borderRight: '1px solid rgb(175, 175, 175)', height: '100%' }}>
-            <ChatGroup 
-                title='Channels' 
-                onSubmit={(data) => onChannelCreate(data)}
-            />
+        <div style={{ padding: '16px', borderRight: '1px solid rgb(175, 175, 175)', height: '100%' }}>
+            <div style={styles.titleContainer}>
+                <ChatGroup 
+                    title='Channels' 
+                    placeholder='Create a group'
+                    onSubmit={(data) => onChannelCreate(data)}
+                />
+            </div>
 
             <div style={styles.chatsContainer}>
                 { renderChannels() }
             </div>
 
-            <ChatGroup 
-                title='Direct Messages' 
-                onSubmit={(data) => onDirectMessageCreate(data)}
-            />
+            <div style={styles.titleContainer}>
+                <ChatGroup 
+                    title='Direct Messages' 
+                    placeholder='Type a username'
+                    onSubmit={(data) => onDirectMessageCreate(data)}
+                />
+            </div>
 
             <div style={styles.chatsContainer}>
                 { renderDirectMessages() }
@@ -96,8 +114,10 @@ const styles = {
         fontSize: '18px',
         fontWeight: '600',
     },
+    titleContainer: {
+        padding: '0px 12px',
+    },
     chatsContainer: {
-        paddingTop: '12px',
-        paddingBottom: '12px',
+        padding: '22px 0px',
     }
 }
