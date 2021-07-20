@@ -1,3 +1,5 @@
+## Slack with Chat Engine
+
 ![Slack Clone with Chat Engine](https://chat-engine-assets.s3.amazonaws.com/tutorials/slack-clone-1-min.png)
 
 ## Setup Required
