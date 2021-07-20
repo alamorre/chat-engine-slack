@@ -16,7 +16,7 @@ function App() {
       <ChatEngine 
         development={true}
         height='100vh'
-        projectID='b0c492b5-398b-47a8-820c-1ff760e997b1'
+        projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
         userName={user.username}
         userSecret={user.secret}
         offset={user.custom_json.gmt_offset}

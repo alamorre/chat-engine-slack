@@ -1,4 +1,23 @@
-# Chat Engine Tutorial
+![Slack Clone with Chat Engine](https://chat-engine-assets.s3.amazonaws.com/tutorials/slack-clone-1-min.png)
+
+## Setup Required
+
+### 1) Create Chat Engine Project
+
+You will need to create a sample project to see this project run. Go to https://chatengine.io and create a sample project.
+
+### 2) .env file
+
+Make sure to add a .env file and put in the following fields:
+
+You'll need to copy/paste your new project's ID and Private Key into this file.
+
+```
+REACT_APP_CHAT_ENGINE_PROJECT_ID=abcdabcd-abcd-abcd-abcd-abcdabcdabcd
+REACT_APP_CHAT_ENGINE_PRIVATE_KEY=12341234-1234-1234-1234-123412341234
+```
+
+## Chat Engine Tutorial
 
 Chat Engine
 
