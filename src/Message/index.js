@@ -47,7 +47,7 @@ const Message = props => {
                 {
                     isNewTurn &&
                     <div style={styles.messageSender}>
-                        {props.message.sender.username} - {messageTime}
+                        { props.message.sender ? props.message.sender.username : ''} - {messageTime}
                     </div>
                 }
                 <Body text={props.message.text} />

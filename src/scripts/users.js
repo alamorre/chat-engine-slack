@@ -55,7 +55,7 @@ export const users = [
 export function createUsers() {
     users.map(user => {
         axios.put(
-            'http://127.0.0.1:8000/users/',
+            'https://api.chatengine.io/users/',
             user,
             {headers: {'Private-Key': process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY}}
         )
