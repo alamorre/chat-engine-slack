@@ -3,7 +3,9 @@ import React from 'react'
 import Body from './Body'
 
 import { stringToColor } from './color'
-import { getDateTime, formatTime, formatDate } from '../timezone'
+import { getDateTime, formatTime } from '../timezone'
+
+let styles = require('../styles.json');
 
 
 const Message = props => {
@@ -55,36 +57,3 @@ const Message = props => {
 }
 
 export default Message;
-
-const styles = {
-    avatar: { 
-        height: '50px', 
-        width: '50px', 
-        margin: '4px', 
-        borderRadius: '4px',
-        textAlign: 'center'
-    },
-    avatarText: {
-        fontSize: '22px',
-        fontWeight: '600',
-        color: 'white',
-        paddingTop: '11px'
-    },
-    messageRow: { 
-        marginLeft: '58px',
-        width: 'calc(100% - 60px)',
-        padding: '0px 4px',
-    },
-    messageSender: { 
-        paddingBottom: '6px', 
-        fontSize: '14px', 
-        fontWeight: '700' 
-    },
-
-    messageSender: { 
-        paddingBottom: '6px', 
-        fontSize: '14px', 
-        fontWeight: '700',
-        color: '#454545'
-    },
-}
