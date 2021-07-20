@@ -59,7 +59,7 @@ export function createUsers() {
             user,
             {headers: {'Private-Key': process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY}}
         )
-        .then(r => console.log('new user', r))
+        .then(r => console.log('get or create user', r))
         .catch(e => console.log('get/create user error', e))
     })
 }

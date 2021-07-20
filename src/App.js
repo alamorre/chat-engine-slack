@@ -14,7 +14,6 @@ function App() {
   return (
     <div style={{ fontFamily: 'Avenir' }}>
       <ChatEngine 
-        development={true}
         height='100vh'
         projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
         userName={user.username}
