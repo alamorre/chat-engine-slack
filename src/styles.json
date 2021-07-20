@@ -1,0 +1,37 @@
+{
+    "chatList": { 
+        "padding": "16px",
+        "borderRight": "1px solid rgb(175, 175, 175)", 
+        "height": "calc(100% - 32px)",
+        "backgroundColor": "#722ed1" 
+    },
+    "titleContainer": {
+        "padding": "0px 12px"
+    },
+    "chatsContainer": {
+        "padding": "22px 0px"
+    },
+    "link": {
+        "cursor": "pointer",
+        "padding": "3px 0px",
+        "display": "inline-block",
+        "color": "white"
+    },
+    "chatGroupTitle": {
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "color": "white"
+    },
+    "newChatButton": {
+        "float": "right",
+        "width": "33px",
+        "backgroundColor": "#722ed1",
+        "border": "1px solid white",
+        "borderRadius": "50%",
+        "fontSize": "24px",
+        "cursor": "pointer",
+        "color": "white",
+        "position": "relative",
+        "bottom": "3px"
+    }
+}

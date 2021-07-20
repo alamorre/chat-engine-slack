@@ -5,6 +5,8 @@ import { ChatEngineContext, getOrCreateChat } from 'react-chat-engine'
 import ChatLink from './ChatLink'
 import ChatGroup from './ChatGroup'
 
+let styles = require('../styles.json');
+
 const ChatList = props => {
     const { setActiveChat } = useContext(ChatEngineContext)
 
@@ -108,18 +110,3 @@ const ChatList = props => {
 }
 
 export default ChatList;
-
-const styles = {
-    chatList: { 
-        padding: '16px',
-        borderRight: '1px solid rgb(175, 175, 175)', 
-        height: 'calc(100% - 32px)',
-        backgroundColor: '#722ed1' 
-    },
-    titleContainer: {
-        padding: '0px 12px',
-    },
-    chatsContainer: {
-        padding: '22px 0px',
-    }
-}

@@ -37,6 +37,3 @@ const NewChatHeader = props => {
 }
 
 export default NewChatHeader;
-
-const styles = {
-}

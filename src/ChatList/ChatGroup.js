@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+let styles = require('../styles.json');
+
 const ChatGroup = props => {
     const [value, setValue] = useState('')
     const [formOpen, setFormOpen] = useState(false)
@@ -19,20 +21,18 @@ const ChatGroup = props => {
                         autoFocus 
                         value={value}
                         placeholder={props.placeholder}
-                        onChange={e => setValue(e.target.value)}
                         onBlur={() => setFormOpen(false)}
+                        onChange={e => setValue(e.target.value)}
                     />
                 </form>:
                 <span>
-                    <span style={styles.title}>
+                    <span style={styles.chatGroupTitle}>
                         {props.title}
                     </span>
                     <button 
-                        style={styles.button}
+                        style={styles.newChatButton}
                         onClick={() => setFormOpen(true)}
-                    >
-                        +
-                    </button>
+                    >+</button>
                 </span>
             }
         </div>
@@ -40,23 +40,3 @@ const ChatGroup = props => {
 }
 
 export default ChatGroup;
-
-const styles = {
-    title: {
-        fontSize: '14px',
-        fontWeight: '600',
-        color: 'white',
-    },
-    button: {
-        float: 'right',
-        width: '33px',
-        backgroundColor: '#722ed1',
-        border: '1px solid white',
-        borderRadius: '50%',
-        fontSize: '24px',
-        cursor: 'pointer',
-        color: 'white',
-        position: 'relative',
-        bottom: '3px',
-    }
-}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+let styles = require('../styles.json');
+
 const ChatLink = props => {
     const [hovered, setHovered] = useState(false)
 
@@ -9,7 +11,7 @@ const ChatLink = props => {
 
     return (
         <div>
-            <div 
+            <div
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 style={{
@@ -29,12 +31,3 @@ const ChatLink = props => {
 }
 
 export default ChatLink;
-
-const styles = {
-    link: {
-        cursor: 'pointer',
-        padding: '3px 0px',
-        display: 'inline-block',
-        color: 'white'
-    },
-}
