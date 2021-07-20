@@ -23,3 +23,7 @@ code {
 #ce-send-message-button {
   background-color: #722ed1 !important;
 }
+
+#ce-send-message-button:hover {
+  background-color: #804cc9 !important;
+}
